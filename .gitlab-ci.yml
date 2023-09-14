@@ -53,7 +53,7 @@ deloy_prod:
     - ansible-galaxy install -r requirements.yml
     - ansible-playbook playbooks/site.yml --private-key=$HOME/.ssh/crawler-project -e tf_bucket_access_key=$tf_bucket_access_key -e tf_bucket_secret_key=$tf_bucket_secret_key
     - cd -
-    - DYNAMIC_ENVIRONMENT_URL=$(cat app/ansible/environments/prod/inventory | awk '/app-host/ {print $2}' | awk -F = '{print "http://"$2".xip.io"}')
+    - DYNAMIC_ENVIRONMENT_URL=$(cat app/ansible/environments/prod/inventory | awk '/app-host/ {print $2}' | awk -F = '{print "http://"$2}')
     - echo "DYNAMIC_ENVIRONMENT_URL=$DYNAMIC_ENVIRONMENT_URL" >> deploy.env
   artifacts:
     reports:
