@@ -1,0 +1,11 @@
+---
+gitlab_runner_token: Dfhju39dbklbnci33cju  # GitLab token for runner register, SET YOURS if needed
+gitlab_root_password: Qw123456=  # GitLab password for user root (instance admin), SET YOURS
+runners_count: 1
+
+tf_state: present
+
+tf_bucket_name: terraform-crawler-state  # YC S3 bucket name, SET YOURS if needed
+tf_bucket_state_file_name: terraform-crawler-infra.tfstate
+tf_bucket_access_key: YCAJECz2TGnbRllg5vJbATVqm  # YC S3 bucket access key, SET YOURS
+tf_bucket_secret_key: YCNosbqcNLW_lAOEzYz7PWmIWin_G9vFhKyd3ucL  # YC S3 bucket secret key, SET YOURS
