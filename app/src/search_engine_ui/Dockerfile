@@ -2,10 +2,8 @@ FROM python:3.6.0-alpine
 WORKDIR /ui
 COPY requirements.txt /ui
 RUN pip install --upgrade pip
+ENV PIP_ROOT_USER_ACTION=ignore
 RUN pip install -r requirements.txt
-RUN install wheel
-RUN install virtualenv
-RUN python -m venv venv
 COPY ./ui/ /ui
 EXPOSE  8000
 ENV MONGO mongodb

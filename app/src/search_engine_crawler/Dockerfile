@@ -2,10 +2,8 @@ FROM python:3.6.0-alpine
 WORKDIR /crawler
 COPY requirements.txt /crawler
 RUN pip install --upgrade pip
+ENV PIP_ROOT_USER_ACTION=ignore
 RUN pip install -r requirements.txt
-RUN install wheel
-RUN install virtualenv
-RUN python -m venv venv
 COPY ./crawler/ /crawler
 ENV MONGO mongodb
 ENV MONGO_PORT 27017
