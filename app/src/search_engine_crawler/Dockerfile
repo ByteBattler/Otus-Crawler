@@ -1,8 +1,7 @@
 FROM python:3.6.0-alpine
 WORKDIR /crawler
 COPY requirements.txt /crawler
-RUN pip install pip==21.0
-RUN pip install MarkupSafe==2.1.0
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 COPY ./crawler/ /crawler
 ENV MONGO mongodb
