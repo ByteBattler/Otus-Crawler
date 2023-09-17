@@ -2,9 +2,7 @@ FROM python:3.6.0-alpine
 WORKDIR /ui
 COPY requirements.txt /ui
 RUN pip install --upgrade pip
-RUN pip install --root-user-action=ignore
-ENV PIP_ROOT_USER_ACTION=ignore
-RUN pip install -r requirements.txt
+RUN pip install --root-user-action=ignore -r requirements.txt
 COPY ./ui/ /ui
 EXPOSE  8000
 ENV MONGO mongodb
