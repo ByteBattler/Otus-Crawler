@@ -1,7 +1,7 @@
 FROM python:3.6.0-alpine
 WORKDIR /ui
 COPY requirements.txt /ui
-RUN pip install --upgrade pip
+RUN pip install pip==21.0
 RUN pip install -r requirements.txt
 COPY ./ui/ /ui
 EXPOSE  8000
