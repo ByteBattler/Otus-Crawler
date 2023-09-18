@@ -29,7 +29,7 @@ override.tf.json
 # example: *tfplan*
 
 # Ignore dynamic ansible inventory
-*/ansible/environments/*/inventory
+#*/ansible/environments/*/inventory
 
 # Ignore any ansible roles, exclude gitlab-ci
 */ansible/roles
