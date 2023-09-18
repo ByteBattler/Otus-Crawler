@@ -1,3 +1,15 @@
+terraform {
+  required_version = ">= 0.14.5"
+
+  required_providers {
+    yandex = {
+      source  = "yandex-cloud/yandex"
+      version = "0.98.0"
+    }
+
+  }
+}
+
 provider "yandex" {
     service_account_key_file = pathexpand("~/yandex-cloud/terraform-bot-key.json")
     cloud_id = var.cloud_id
