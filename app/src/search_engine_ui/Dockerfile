@@ -1,7 +1,9 @@
 FROM python:3.6.0-alpine
 WORKDIR /ui
 COPY requirements.txt /ui
-RUN pip install -r requirements.txt
+COPY requirements-test.txt /ui
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt -r requirements-test.txt
 COPY ./ui/ /ui
 EXPOSE  8000
 ENV MONGO mongodb
