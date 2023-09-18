@@ -2,7 +2,7 @@ FROM python:3.6.0-alpine
 WORKDIR /crawler
 COPY requirements.txt /crawler
 COPY requirements-test.txt /crawler
-RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt -r requirements-test.txt
 COPY ./crawler/ /crawler
 ENV MONGO mongodb
 ENV MONGO_PORT 27017
