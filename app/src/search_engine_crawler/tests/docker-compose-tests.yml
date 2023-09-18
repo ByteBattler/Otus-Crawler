@@ -3,5 +3,5 @@ services:
 
   crawler:
     volumes:
-      - '/builds/root/Otus-DevOps-08-2020-Project-Work/app/src/search_engine_crawler/tests:/tests'
-      - '/builds/root/Otus-DevOps-08-2020-Project-Work/app/src/search_engine_crawler/requirements-test.txt:/crawler/requirements-test.txt'
+      - '/builds/root/Otus-Crawler/app/src/search_engine_crawler/tests:/tests'
+      - '/builds/root/Otus-Crawler/app/src/search_engine_crawler/requirements-test.txt:/crawler/requirements-test.txt'
