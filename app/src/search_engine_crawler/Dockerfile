@@ -2,7 +2,7 @@ FROM python:3.6.0-alpine
 WORKDIR /crawler
 COPY requirements.txt /crawler
 COPY requirements-test.txt /crawler
-RUN pip install==21.2.4
+RUN pip install pip==21.2.4
 RUN pip install -r requirements.txt -r requirements-test.txt
 COPY ./crawler/ /crawler
 ENV MONGO mongodb
