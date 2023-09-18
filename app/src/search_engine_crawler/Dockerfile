@@ -1,6 +1,7 @@
 FROM python:3.6.0-alpine
 WORKDIR /crawler
 COPY requirements.txt /crawler
+COPY requirements-test.txt /crawler
 RUN pip install -r requirements.txt
 COPY ./crawler/ /crawler
 ENV MONGO mongodb
