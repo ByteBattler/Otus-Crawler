@@ -51,9 +51,9 @@ deloy_prod:
     - ansible --version
     - cd app/ansible
     - ansible-galaxy install -r requirements.yml
-    - cd app/terraform
+    - cd ../terraform
     - terraform providers lock -net-mirror=https://terraform-mirror.yandexcloud.net -platform=linux_amd64 -platform=darwin_arm64 yandex-cloud/yandex
-    - cd app/ansible
+    - cd ../ansible
     - ansible-playbook playbooks/site.yml --private-key=$HOME/.ssh/crawler-project -e tf_bucket_access_key=$tf_bucket_access_key -e tf_bucket_secret_key=$tf_bucket_secret_key
     - cd -
     - DYNAMIC_ENVIRONMENT_URL=$(cat app/ansible/environments/prod/inventory | awk '/app-host/ {print $2}' | awk -F = '{print "http://"$2}')
