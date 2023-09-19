@@ -46,10 +46,7 @@ deloy_prod:
     - mkdir $HOME/.ssh && cp $crawler_project $HOME/.ssh/crawler-project && chmod 600 $HOME/.ssh/crawler-project
     - cp keys/crawler-project.pub $HOME/.ssh/ && chmod 644 $HOME/.ssh/crawler-project.pub
     - chmod 755 app/ansible/
-    - echo "Home directory"
-    - pwd
-    - ls
-    - cp app/terraform/.terraformrc $HOME/.terraformrc && chmod 777 $HOME/.terraformrc
+    - cp app/terraform/.terraformrc $HOME/.terraformrc && chmod 755 $HOME/.terraformrc
   script:
     - terraform -v
     - ansible --version
