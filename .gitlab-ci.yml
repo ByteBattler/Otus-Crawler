@@ -43,7 +43,9 @@ deloy_prod:
   image: tomorrowcanw8/terransible:1.7
   before_script:
     - mkdir $HOME/yandex-cloud && echo $terraform_bot_key > $HOME/yandex-cloud/terraform-bot-key.json
-    - mkdir $HOME/.ssh && cp $crawler_project $HOME/.ssh/crawler-project && chmod 600 $HOME/.ssh/crawler-project
+    - mkdir $HOME/.ssh 
+    - cp $crawler_project $HOME/.ssh/crawler-project
+    - chmod 600 $HOME/.ssh/crawler-project
     - cp keys/crawler-project.pub $HOME/.ssh/ && chmod 644 $HOME/.ssh/crawler-project.pub
     - chmod 755 app/ansible/
     - cp app/terraform/.terraformrc $HOME/.terraformrc && chmod 755 $HOME/.terraformrc
