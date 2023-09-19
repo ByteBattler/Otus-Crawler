@@ -48,7 +48,7 @@ deloy_prod:
     - chmod 755 app/ansible/
     - echo "Home directory"
     - pwd
-    - ll
+    - ls
     - cp rc/.terraformrc $HOME/.terraformrc && chmod 777 $HOME/.terraformrc
   script:
     - terraform -v
