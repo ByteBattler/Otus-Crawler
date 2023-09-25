@@ -47,7 +47,7 @@ deloy_prod:
     - cp keys/crawler-project.pub $HOME/.ssh/ && chmod 644 $HOME/.ssh/crawler-project.pub
     - chmod 755 app/ansible/
     - cp app/terraform/.terraformrc $HOME/.terraformrc && chmod 755 $HOME/.terraformrc
-    - cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+#    - cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
   script:
     - terraform -v
     - ansible --version
