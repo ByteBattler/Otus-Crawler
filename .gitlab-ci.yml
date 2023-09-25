@@ -47,13 +47,12 @@ deloy_prod:
     - cp keys/crawler-project.pub $HOME/.ssh/ && chmod 644 $HOME/.ssh/crawler-project.pub
     - chmod 755 app/ansible/
     - cp app/terraform/.terraformrc $HOME/.terraformrc && chmod 755 $HOME/.terraformrc
-#    - cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
   script:
     - terraform -v
     - ansible --version
     - cd app/ansible
     - ansible-galaxy install -r requirements.yml
-    - ansible-playbook playbooks/site.yml --private-key=$HOME/.ssh/crawler-project -e tf_bucket_access_key=$tf_bucket_access_key -e tf_bucket_secret_key=$tf_bucket_secret_key
+    - ansible-playbook pl#    - cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keysaybooks/site.yml --private-key=$HOME/.ssh/crawler-project -e tf_bucket_access_key=$tf_bucket_access_key -e tf_bucket_secret_key=$tf_bucket_secret_key
     - cd -
     - DYNAMIC_ENVIRONMENT_URL=$(cat app/ansible/environments/prod/inventory | awk '/app-host/ {print $2}' | awk -F = '{print "http://"$2}')
     - echo "DYNAMIC_ENVIRONMENT_URL=$DYNAMIC_ENVIRONMENT_URL" >> deploy.env
